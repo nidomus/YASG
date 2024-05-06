@@ -17,11 +17,12 @@ jobs:
       # Pick your own package manager and build script
       - run: npm install
       - run: npx nuxt build --preset github_pages
+        working-directory: ../jdsudoku
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./.output/public
-        working-directory: ../jdsudoku
+        
   # Deployment job
   deploy:
     # Add a dependency to the build job
