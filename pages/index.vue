@@ -602,7 +602,7 @@ function check() {
 @media screen and (max-width: 768px) {
     #actions .button:not(#generate .button) {
         aspect-ratio: 1;
-        // font-size: 1rem;
+        font-size: 0.75rem;
 
     }
 
