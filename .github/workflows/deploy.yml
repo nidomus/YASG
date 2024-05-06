@@ -16,24 +16,19 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: npm install
-        with:
-          working-directory: ../jdsudoku
       - run: npx nuxt build --preset github_pages
-        with:
-        working-directory: ../jdsudoku
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ../jdsudoku/output/public
-        
+          path: ./.output/public
   # Deployment job
   deploy:
     # Add a dependency to the build job
     needs: build
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     # Deploy to the github_pages environment
     environment:
       name: github_pages
