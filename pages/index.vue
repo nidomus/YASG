@@ -172,13 +172,6 @@
             </footer>
         </div>
 
-
-
-
-
-
-
-
     </section>
 
 </template>
@@ -196,6 +189,12 @@ const difficultySelect = ref('easy')
 const difficulty = ref('')
 const annotationMode = ref(false)
 
+useHead({
+  title: 'Sudoku',
+  meta: [
+    { name: 'description', content: 'My amazing sudoku generator.' }
+  ],
+})
 
 onMounted(async () => {
     loading.value = true
@@ -513,7 +512,11 @@ function check() {
 
 
 .footer {
-    background-color: #e3d2bbd5;;
+    background-color: #e3d2bb7e;
+
+    & div p {
+        color:  !important;
+    }
 }
 
 #generate .button {
@@ -555,7 +558,7 @@ function check() {
 }
 
 #reset-button {
-    background-color: #9C8B68;
+    background-color: #eea106;
     border: #9C8B68 2px solid;
     box-shadow: #261d14b7 2px 2px 3px;
     color: #ffffff;

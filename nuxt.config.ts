@@ -3,9 +3,12 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  /*  build: {
-      transpile: ['vuetify'],
-    },*/
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  },
   css: ['bulma'],
   modules: [
     (_options, nuxt) => {
