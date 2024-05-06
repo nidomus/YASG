@@ -294,7 +294,10 @@ function reset() {
 function addValue(event, valor) {
     selectedCell.value.oldNumber = selectedCell.value.number
     selectedCell.value.number = valor
-    selectedCell.value.annotations[valor - 1] = !selectedCell.value.annotations[valor - 1]
+
+    if(selectedCell.value.annotations[valor - 1] === true){
+        selectedCell.value.annotations[valor - 1] = false
+    }
     check()
 
 }
@@ -505,14 +508,12 @@ function check() {
 
 .navbar h1 {
     color: #E3D2BB !important;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
 
 }
 
 
 .footer {
-    background-color: #e3d2bb52;
+    background-color: #e3d2bbd5;;
 }
 
 #generate .button {
@@ -522,8 +523,9 @@ function check() {
 
 #generate select {
     border-color: #487545 !important;
-
+    background-color: white !important;
     color: #261D14;
+    font-weight: bold;
 }
 
 #generate .select:after {
