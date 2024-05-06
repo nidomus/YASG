@@ -190,10 +190,10 @@ const difficulty = ref('')
 const annotationMode = ref(false)
 
 useHead({
-  title: 'Sudoku',
-  meta: [
-    { name: 'description', content: 'My amazing sudoku generator.' }
-  ],
+    title: 'Sudoku',
+    meta: [
+        { name: 'description', content: 'My amazing sudoku generator.' }
+    ],
 })
 
 onMounted(async () => {
@@ -291,13 +291,18 @@ function reset() {
 }
 
 function addValue(event, valor) {
-    selectedCell.value.oldNumber = selectedCell.value.number
-    selectedCell.value.number = valor
 
-    if(selectedCell.value.annotations[valor - 1] === true){
-        selectedCell.value.annotations[valor - 1] = false
+    if (selectedCell.value.editable == true) {
+
+
+        selectedCell.value.oldNumber = selectedCell.value.number
+        selectedCell.value.number = valor
+
+        if (selectedCell.value.annotations[valor - 1] === true) {
+            selectedCell.value.annotations[valor - 1] = false
+        }
+        check()
     }
-    check()
 
 }
 
@@ -515,7 +520,7 @@ function check() {
     background-color: #e3d2bb7e;
 
     & div p {
-        color:  !important;
+        color: !important;
     }
 }
 
@@ -559,12 +564,12 @@ function check() {
 
 #reset-button {
     background-color: #eea106;
-    border: #9C8B68 2px solid;
+    border: #eea106 2px solid;
     box-shadow: #261d14b7 2px 2px 3px;
     color: #ffffff;
 
     &:hover {
-        background-color: #836e43;
+        background-color: #ca8805;
     }
 
 }
@@ -588,15 +593,16 @@ function check() {
 
 }
 
-.hero, .hero-body{
+.hero,
+.hero-body {
     background-color: white !important;
 }
 
 
 @media screen and (max-width: 768px) {
-    #actions .button.is-large {
+    #actions .button:not(#generate .button) {
         aspect-ratio: 1;
-        font-size: 1rem;
+        // font-size: 1rem;
 
     }
 
