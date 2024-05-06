@@ -192,7 +192,7 @@ const sudokuBkp = ref([])
 const selectedCell = ref({})
 const errors = ref(0)
 const loading = ref(true)
-const difficultySelect = ref('')
+const difficultySelect = ref('easy')
 const difficulty = ref('')
 const annotationMode = ref(false)
 
@@ -582,6 +582,11 @@ function check() {
     box-shadow: #261d14b7 2px 2px 3px;
 
 }
+
+.hero, .hero-body{
+    background-color: white !important;
+}
+
 
 @media screen and (max-width: 768px) {
     #actions .button.is-large {
