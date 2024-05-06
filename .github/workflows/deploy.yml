@@ -21,6 +21,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./.output/public
+        working-directory: ../jdsudoku
   # Deployment job
   deploy:
     # Add a dependency to the build job
