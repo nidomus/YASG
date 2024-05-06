@@ -19,8 +19,8 @@ jobs:
         with:
           working-directory: ../jdsudoku
       - run: npx nuxt build --preset github_pages
-          with:
-          working-directory: ../jdsudoku
+        with:
+        working-directory: ../jdsudoku
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
