@@ -24,5 +24,6 @@ export default defineNuxtConfig({
       },
     },
   },
+  router: { base: '/YASG/' },
 
 })
