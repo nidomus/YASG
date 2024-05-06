@@ -3,9 +3,10 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  build: {
-    transpile: ['vuetify'],
-  },
+  /*  build: {
+      transpile: ['vuetify'],
+    },*/
+  css: ['bulma'],
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
@@ -13,6 +14,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    'nuxt-icon',
     //...
   ],
   vite: {
@@ -22,4 +24,5 @@ export default defineNuxtConfig({
       },
     },
   },
+
 })
