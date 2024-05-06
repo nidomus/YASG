@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="column is-12 py-5">
-                            <p class="is-size-5-desktop is-size-6-touch icon-text" :class="{ 'visible': !loading }"
+                            <p class="is-size-5-desktop is-size-5-touch icon-text" :class="{ 'visible': !loading }"
                                 id="difficulty-text">
                                 <span class="icon">
                                     <Icon name="streamline:brain-cognitive-solid" size="1rem" />
@@ -602,7 +602,7 @@ function check() {
 @media screen and (max-width: 768px) {
     #actions .button:not(#generate .button) {
         aspect-ratio: 1;
-        font-size: 0.75rem;
+        font-size: 1rem;
 
     }
 
