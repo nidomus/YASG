@@ -18,6 +18,7 @@ jobs:
                 host: 170.82.14.105
                 username: "deploy"
                 key: ${{secrets.SSH_KEY}}
+                port: 22
                 source: "."
                 target: "/webapps/sudoku/frontend/"
                     
@@ -27,6 +28,7 @@ jobs:
                   host: 170.82.14.105
                   username: "deploy"
                   key: ${{secrets.SSH_KEY}}
+                  port: 22
                   script: |
                     cd /webapps/sudoku/frontend/
                     npm i
