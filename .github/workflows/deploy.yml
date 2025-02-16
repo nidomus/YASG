@@ -15,7 +15,7 @@ jobs:
             - name: "Copiar arquivos para VPS"
               uses: appleboy/scp-action@v0.1.7
               with:
-                host: 170.82.14.105
+                host: herbertdev.com.br
                 username: "deploy"
                 key: ${{secrets.SSH_KEY}}
                 port: 22
@@ -25,7 +25,7 @@ jobs:
             - name: "Build do frontend da aplicação"
               uses: appleboy/ssh-action@v1.0.3
               with:
-                  host: 170.82.14.105
+                  host: herbertdev.com.br
                   username: "deploy"
                   key: ${{secrets.SSH_KEY}}
                   port: 22
